@@ -261,7 +261,6 @@ class MSTeams {
             actionLinks,
             ...mentionedIds
           ],
-          '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
           msteams: {
             entities: entities
           }
