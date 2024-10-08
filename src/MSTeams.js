@@ -247,9 +247,10 @@ class MSTeams {
     return {
       'type': 'message',
       attachments: [{
-        contentType: 'application/vnd.microsoft.card.adaptive',
+        contentType: 'object',
         content: {
           type: 'AdaptiveCard',
+          version: '1.5',
           body: [
             headerTitle,
             repositoryLink,
@@ -261,7 +262,6 @@ class MSTeams {
             ...mentionedIds
           ],
           '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
-          version: '1.5',
           msteams: {
             entities: entities
           }
