@@ -1600,9 +1600,10 @@ class MSTeams {
     return {
       'type': 'message',
       attachments: [{
-        contentType: 'application/vnd.microsoft.card.adaptive',
+        contentType: 'object',
         content: {
           type: 'AdaptiveCard',
+          version: '1.4',
           body: [
             headerTitle,
             repositoryLink,
@@ -1613,8 +1614,6 @@ class MSTeams {
             actionLinks,
             ...mentionedIds
           ],
-          '$schema': 'http://adaptivecards.io/schemas/adaptive-card.json',
-          version: '1.5',
           msteams: {
             entities: entities
           }
@@ -25784,7 +25783,7 @@ async function run() {
 			payload = Object.assign({}, msteams.header, JSON.parse(raw));
 		}
 
-		core.info(`Generated payload for Microsoft Teams:\n${JSON.stringify(payload, null, 2)}`);
+		core.info(`FEDE Generated payload for Microsoft Teams:\n${JSON.stringify(payload, null, 2)}`);
 
 		if (dry_run === '' || dry_run==='false') {
 			await msteams.notify(webhook_url, payload);
