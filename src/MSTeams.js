@@ -250,7 +250,7 @@ class MSTeams {
         contentType: 'object',
         content: {
           type: 'AdaptiveCard',
-          version: '1.5',
+          version: '1.4',
           body: [
             headerTitle,
             repositoryLink,
