@@ -57,7 +57,7 @@ async function run() {
 			payload = Object.assign({}, msteams.header, JSON.parse(raw));
 		}
 
-		core.info(`FEDE Generated payload for Microsoft Teams:\n${JSON.stringify(payload, null, 2)}`);
+		core.info(`Generated payload for Microsoft Teams:\n${JSON.stringify(payload, null, 2)}`);
 
 		if (dry_run === '' || dry_run==='false') {
 			await msteams.notify(webhook_url, payload);
